@@ -6,6 +6,5 @@ You need to first install nodejs, docker and docker compose before using docker-
 
 clone this repo
 cd into this directory 
-create two directories angular-app and express-server 
 
 The dockerfiles in these two directories will be used by the Docker-compose.yml to deploy the services
