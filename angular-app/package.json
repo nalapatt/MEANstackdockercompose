@@ -1,7 +1,11 @@
 {
-  "name": "my_app1",
-  "version": "0.0.1",
+  "name": "docker_angular",
+  "version": "0.0.0",
   "scripts": {
-    "start": "node server.js"
+     "ng": "ng"
+     "start": "ng serve"
+     "build":"ng build"
+     "test":"ng test"
+    #"start": "node server.js"
   }
 }
