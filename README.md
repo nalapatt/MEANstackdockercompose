@@ -165,3 +165,31 @@ now go to your localhost:3000 you should see hello from docker
 docker run -d --name mongodb -p 27017:27017 mongo
 this creates your mongo container
 
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run in docker-compose.yml file
+vi docker-compose.yml
+add this
+
+services:
+  angular: # name of the first service
+    build: angular-client # specify the directory of the Dockerfile
+    ports:
+      - "4200:4200" # specify port forewarding
+
+  express: #name of the second service
+    build: express-server # specify the directory of the Dockerfile
+    ports:
+      - "3000:3000" #specify ports forewarding
+
+  database: # name of the third service
+    image: mongo # specify image to build container from
+    ports:
+      - "27017:27017" # specify port forewarding
+    
+    esc:wq to save and quit
+
+# to deploy all the three containers at once run
+
+sudo docker-compose up
+
