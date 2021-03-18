@@ -81,7 +81,7 @@ now go to your ip address :4200 and you should be able to view your angular page
 
 sudo stop angular-client to stop the container
 
-# Now you have deployed your first container containing angular manually using you
+ Now you have deployed your first container containing angular manually using you
 r dockerfile
 
 # Now Deploy your Express Container
@@ -161,7 +161,7 @@ now go to your localhost:3000 you should see hello from docker
 
 # hurray you have deployed your first express container
 
-# For the mongo db just download the image
+# For the mongo db just download the image and run it 
 docker run -d --name mongodb -p 27017:27017 mongo
 this creates your mongo container
 
