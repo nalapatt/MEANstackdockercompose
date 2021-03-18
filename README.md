@@ -18,9 +18,11 @@ docker --version
 docker-compose --version
 node --version
 
+# clone this repo or if creating your own 
 mkdir MeanAngExpNodeMongoDockerFile
 cd MeanAngExpNodeMongoDockerFile
 
+# create a new angular app
 npx @angular/cli new angular-client
 
 ? Would you like to add Angular routing? No
@@ -41,8 +43,10 @@ npx @angular/cli new angular-client
         ├── tsconfig.json
         └── tslint.json
         
-        
+    
+ # change into the angular dir   
  cd angular-client
+ 
  # create a dockerfile
  
  vi Dockerfile
@@ -76,16 +80,17 @@ sudo docker build -t angular-client:dev .
 # Now create the container
 sudo docker run -d --name angular-client -p 4200:4200 angular-client:dev
 
+# to view the app on your localhost
 sudo start angular-client
 now go to your ip address :4200 and you should be able to view your angular page
 
 sudo stop angular-client to stop the container
 
- Now you have deployed your first container containing angular manually using you
-r dockerfile
+ Now you have deployed your first container containing angular manually using your dockerfile
 
 # Now Deploy your Express Container
 
+# change into express dir 
 mkdir express-server
 cd  express-server
 
@@ -189,7 +194,7 @@ services:
     
     esc:wq to save and quit
 
-# to deploy all the three containers at once run
+# to deploy all the three containers at once in docker compose
 
 sudo docker-compose up
 
