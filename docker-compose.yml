@@ -1,7 +1,7 @@
 version: '3.0'
 
 services:
-    angular:
+  angular:
     build: angular-app # the folder containing the angular dockerfile
     ports:
     - "4200-4200" #make sure this ports are opened
