@@ -1,22 +1,22 @@
 version: '3.0'
 
 services:
-        #angular:
-        #build: angular-app # the folder containing the angular dockerfile
-        #ports:
-        #- "4200-4200" #make sure this ports are opened
+    angular:
+    build: angular-app # the folder containing the angular dockerfile
+    ports:
+    - "4200-4200" #make sure this ports are opened
   
   express:
     build: express-server # the folder containing the express dockerfile
     ports:
       - "3000-3000"  #make sure this ports are opened
-    #links:
-    #  - database # this calls the mongo db build
+    links:
+      - database # this calls the mongo db build
 
-        #database:
-        #image: mongo
-        #ports:
-        #- "27017:27017"  #make sure this ports are opened
+  database:
+    image: mongo
+    ports:
+      - "27017:27017"  #make sure this ports are opened
 
 
 
