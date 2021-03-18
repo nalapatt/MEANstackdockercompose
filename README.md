@@ -5,7 +5,7 @@ d Node Js to create a single page application , dockerizes them into three conta
 iners using docker compose
 
 
-Prerequistes
+# Prerequistes
 
 Open port 4200, 3000, 27107 and http 80 on your instance
 
@@ -13,7 +13,7 @@ Open port 4200, 3000, 27107 and http 80 on your instance
 Install Docker
 Install Docker Compose
 
-Verify if installed by 
+# Verify if installed by 
 docker --version
 docker-compose --version
 node --version
@@ -26,7 +26,8 @@ npx @angular/cli new angular-client
 ? Would you like to add Angular routing? No
 ? Which stylesheet format would you like to use? CSS
 
-your directory should look like this
+# your directory should look like this
+
 └── MeanAngExpNodeMongoDockerFile
     └── angular-client
     your directory should look like this
@@ -42,7 +43,7 @@ your directory should look like this
         
         
  cd angular-client
- create a dockerfile
+ # create a dockerfile
  
  vi Dockerfile
  add this inside
@@ -59,20 +60,20 @@ CMD ["npm", "start"]
 
 esc:wq to save and quit
 
-vi .dockerignore
+# vi .dockerignore
 add this
 node_modules/
 esc:wq to save and quit
 
-vi package.json
+# vi package.json
 delete "start": "ng serve 
 replace with    "start": "ng serve --host 0.0.0.0  --disable-host-check",
 esc:wq to save and quit
  
-Now build it
+# Now build it
 sudo docker build -t angular-client:dev .
 
-Now create the container
+# Now create the container
 sudo docker run -d --name angular-client -p 4200:4200 angular-client:dev
 
 sudo start angular-client
@@ -80,15 +81,15 @@ now go to your ip address :4200 and you should be able to view your angular page
 
 sudo stop angular-client to stop the container
 
-Now you have deployed your first container containing angular manually using you
+# Now you have deployed your first container containing angular manually using you
 r dockerfile
 
-Now Deploy your Express Container
+# Now Deploy your Express Container
 
 mkdir express-server
 cd  express-server
 
-vi Dockerfile
+# vi Dockerfile
 add this
 
 FROM node:6
@@ -101,12 +102,12 @@ EXPOSE 3000
 CMD ["npm", "start"]
 esc :wq to save and quit
 
-vi .dockerignore
+# vi .dockerignore
 add this
 node.modules/
 esc:wq to save and quit 
 
-vi package.json
+# vi package.json
 add this
 {
   "name": "express-server",
@@ -121,7 +122,7 @@ add this
   }
   esc :wq to save and quit
   
-  vi server.js
+ # vi server.js
   add this
   const express = require("express");
  const app  = express();
@@ -135,9 +136,9 @@ add this
  });
 esc:wq to save and quit
 
-mkdir routes
+# mkdir routes
 cd routes
-vi api.js
+# vi api.js
 add this
 const express = require('express');
 const router = express.Router();
@@ -158,9 +159,9 @@ docker run -d --name express-server -p 3000:3000 express-server:dev
 
 now go to your localhost:3000 you should see hello from docker
 
-hurray you have deployed your first express container
+# hurray you have deployed your first express container
 
-For the mongo db just download the image
+# For the mongo db just download the image
 docker run -d --name mongodb -p 27017:27017 mongo
 this creates your mongo container
 
