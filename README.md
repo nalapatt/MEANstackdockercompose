@@ -4,6 +4,7 @@ This Project creates a MEAN stack Mongo database, Express Server, Angular CLI an
 d Node Js to create a single page application , dockerizes them into three conta
 iners using docker compose
 
+I have borrowed from the website https://scotch.io/tutorials/create-a-mean-app-with-angular-2-and-docker-compose
 
 # Prerequistes
 
